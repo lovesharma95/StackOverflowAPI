@@ -1,11 +1,13 @@
 import React from 'react';
 import {Button, Text, View} from 'react-native';
+import SearchArea from '../components/SearchArea';
+import SearchedList from '../components/SearchedList';
 
 const HomeScreen = (props) => {
     return (
         <View>
-            <Text>This is Home screen</Text>
-            <Button title="Go to detail" onPress={()=> props.navigation.navigate('Detail')} />
+            <SearchArea />
+            <SearchedList />
         </View>
     );
 }
