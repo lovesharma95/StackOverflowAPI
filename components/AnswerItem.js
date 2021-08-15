@@ -1,33 +1,37 @@
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {Platform, StyleSheet, Text, View} from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
 
-const SearchedItem = props => {
+let code = "for($i = 1; $i < 10; $i++)";
+const AnswerItem = props => {
     return (
-        <TouchableOpacity onPress={() => props.navigation.navigation.navigate('Detail', {
-            title: props.data.title
-        })}>
+        <View>
             <View style={styles.listItems}>
                 <View style={styles.votes}>
                     <View>
                         <Text style={styles.voteText}>{props.data.upVotes}</Text>
                     </View>
                     <View>
-                        <Icon name="caretup">
-                        </Icon>
+                        <Icon name="caretup"></Icon>
                     </View>
                 </View>
                 <View style={styles.questionItem}>
                     <View>
-                        <Text style={styles.questionTitle}>{props.data.title}</Text>
+                        <Text style={styles.answerTitle}>{props.data.title}</Text>
+                        <View style={styles.codeArea}>
+                            <Text style={styles.answerTitle}>{code}</Text>
+                        </View>
+                        <Text style={styles.answerTitle}>{props.data.title}</Text>
                     </View>
                     <View>
-                        <Text>asked by <Text style={styles.username}>{props.data.userName}</Text></Text>
+                        <Text>Answer by 
+                            <Text style={styles.username}> {props.data.userName}</Text>
+                        </Text>
                     </View>
                 </View>
 
             </View>
-        </TouchableOpacity>
+        </View>
     );
 }
 
@@ -38,12 +42,12 @@ const styles = StyleSheet.create({
         flexDirection: 'row'
     },
     votes: {
-        flex:1,
+        flex: 1,
         padding: 20,
         backgroundColor: '#ebebeb',
         flexDirection: 'row',
         justifyContent: 'space-around',
-        alignItems: 'center',
+        alignItems: 'center'
     },
     voteText: {
         fontSize: 17
@@ -57,9 +61,27 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: '#00BFFF'
     },
+    answerTitle: {
+        color: 'black'
+    },
     username: {
         color: '#00BFFF'
+    },
+    codeArea: {
+        backgroundColor: '#F6F6F6',
+        marginVertical: 5,
+        padding: 10,
+        borderRadius: 5,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 1,
+        },
+        shadowOpacity: 0.20,
+        shadowRadius: 1.41,
+
+        elevation: 2,
     }
 });
 
-export default SearchedItem;
+export default AnswerItem;

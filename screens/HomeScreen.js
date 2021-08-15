@@ -7,7 +7,7 @@ const HomeScreen = (props) => {
     return (
         <View>
             <SearchArea />
-            <SearchedList />
+            <SearchedList navigation={props} />
         </View>
     );
 }
