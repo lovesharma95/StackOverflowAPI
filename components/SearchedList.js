@@ -15,7 +15,7 @@ const SearchedList = (props) => {
         <View>
             <FlatList
                 data={DUMMY_DATA}
-                renderItem={itemData => (<SearchedItem data={itemData.item}/>)}/>
+                renderItem={itemData => (<SearchedItem navigation={props.navigation} data={itemData.item}/>)}/>
         </View>
     );
 }
