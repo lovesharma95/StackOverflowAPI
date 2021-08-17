@@ -17,12 +17,12 @@ git clone https://github.com/lokesharma95/StackOverflowAPI.git
 2. Install the dependencies for the project:
 
 ```
+cd StackOverflowAPI
 npm install
 ```
 
 3. Run the project:
 
 ```
-cd StackOverflowAPI
 npm start
 ```
