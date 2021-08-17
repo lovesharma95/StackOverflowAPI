@@ -26,8 +26,6 @@ const AnswerItem = (props) => {
     );
   }
 
-  console.log(props.data);
-
   if (props.data == null) {
     return (
       <View>

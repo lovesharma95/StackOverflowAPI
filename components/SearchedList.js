@@ -26,13 +26,19 @@ const SearchedList = (props) => {
       </View>
     );
   }
-  if (status != "" && status != "loading...") {
+  if (status != "" && status !== "loading...") {
     return content;
   }
+  const fetchMoreResults = () => {
+    console.log("load");
+  };
+
   return (
     <View>
       <FlatList
         data={data}
+        onEndReached={fetchMoreResults}
+        onEndReachedThreshold={0.5}
         renderItem={(itemData) => (
           <SearchedItem navigation={props.navigation} data={itemData.item} />
         )}

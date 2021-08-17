@@ -1,3 +1,4 @@
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { searchActions } from "./search-slice";
 import { uiActions } from "./ui-slice";
 
@@ -45,9 +46,16 @@ export const fetchResult = (inputString, page) => {
         );
       }
 
+      await AsyncStorage.setItem("storage_Key", JSON.stringify(loadedResult));
       dispatch(
         searchActions.replaceData({
           searchResult: loadedResult,
+        })
+      );
+      const value = await AsyncStorage.getItem("storage_Key");
+      dispatch(
+        searchActions.setOfflineData({
+          offlineData: JSON.parse(value),
         })
       );
     } catch (error) {

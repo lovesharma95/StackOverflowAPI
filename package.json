@@ -8,6 +8,8 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@react-native-async-storage/async-storage": "^1.15.6",
+    "@react-native-community/netinfo": "^6.0.0",
     "@react-navigation/native": "^6.0.2",
     "@react-navigation/native-stack": "^6.0.5",
     "@reduxjs/toolkit": "^1.6.1",
@@ -25,6 +27,7 @@
     "react-native-webview": "11.6.2",
     "react-redux": "^7.2.4",
     "redux": "^4.1.1",
+    "redux-persist": "^6.0.0",
     "webview": "^1.0.0"
   },
   "devDependencies": {
