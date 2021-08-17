@@ -25,7 +25,7 @@ const SearchArea = (props) => {
         inputText,
       })
     );
-    dispatch(fetchResult(inputText, page));
+    dispatch(fetchResult(inputText.toString(), page));
     setInputText("");
   };
 
