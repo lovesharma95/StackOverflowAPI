@@ -1,5 +1,11 @@
 import React from "react";
-import { FlatList, StyleSheet, Text, View } from "react-native";
+import {
+  ActivityIndicator,
+  FlatList,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 import SearchedItem from "./SearchedItem";
 import { useSelector } from "react-redux";
 
@@ -13,7 +19,14 @@ const SearchedList = (props) => {
     </View>
   );
 
-  if (data.length < 1) {
+  if (status != "" && status === "loading...") {
+    return (
+      <View>
+        <ActivityIndicator size="large" color="#00BFFF" />
+      </View>
+    );
+  }
+  if (status != "" && status != "loading...") {
     return content;
   }
   return (

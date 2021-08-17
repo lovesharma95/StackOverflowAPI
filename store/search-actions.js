@@ -37,6 +37,12 @@ export const fetchResult = (inputString, page) => {
             status: "No data found",
           })
         );
+      } else {
+        dispatch(
+          uiActions.showNotification({
+            status: "",
+          })
+        );
       }
 
       dispatch(
